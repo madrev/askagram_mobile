@@ -1,0 +1,3 @@
+rootProject.name = 'AskagramMobile'
+
+include ':app'
