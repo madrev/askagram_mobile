@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, View, Text, Image } from 'react-native';
+import { StyleSheet, View, Text, Image, ScrollView } from 'react-native';
 // import AnswerDetail from './answer_detail';
 import { answersAsArray } from '../../reducers/selectors';
 
@@ -7,7 +7,6 @@ import { answersAsArray } from '../../reducers/selectors';
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
@@ -23,8 +22,8 @@ const styles = StyleSheet.create({
     marginBottom: 5,
   },
   image:{
-    width: 50,
-    height: 50,
+    width: 100,
+    height: 100,
   }
 });
 
@@ -39,22 +38,22 @@ class QuestionDetail extends React.Component {
   }
 
   renderImages(){
-    answersAsArray(this.props.answers).map( answer =>
-      { console.log(answer.image_url);
-        return <Image
+    return answersAsArray(this.props.answers).map( answer =>
+         <Image
+        key = {answer.id}
         style={styles.image}
-        source={{ uri: "https://res.cloudinary.com/askagram/image/upload/v1484290204/fkdg2yommbkc3tsn0ega.png"}}/>;
-    });
+        source={{ uri: answer.image_url}}/>
+    );
   }
 
   render() {
     console.log(this.props);
-    return <View style={styles.container}>
+    return <ScrollView contentContainerStyle={styles.container}>
       <Text style={styles.instructions}>
         {this.props.title}
       </Text>
-      { this.renderImages() }
-    </View>;
+      {this.renderImages()}
+    </ScrollView>;
   }
 
   // componentWillUnmount() {
