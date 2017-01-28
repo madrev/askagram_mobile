@@ -9,7 +9,8 @@ export const questionDetail = StyleSheet.create({
   heading: {
     textAlign: 'center',
     color: 'blue',
-    marginBottom: 5,
+    marginTop: 10,
+    marginBottom: 10,
   },
 });
 
@@ -20,7 +21,7 @@ export const answerDetail = StyleSheet.create({
     backgroundColor: '#F5FCFF',
   },
   image:{
-    width: 100,
-    height: 100,
+    width: 300,
+    height: 300,
   }
 });
