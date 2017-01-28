@@ -1,31 +1,12 @@
 import React from 'react';
-import { StyleSheet, View, Text, Image, ScrollView } from 'react-native';
+import { View, Text, Image, ScrollView } from 'react-native';
 // import AnswerDetail from './answer_detail';
 import { answersAsArray } from '../../reducers/selectors';
+import * as Styles from '../../assets/stylesheets';
+import AnswerDetail from './answer_detail';
 
 
 
-const styles = StyleSheet.create({
-  container: {
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    margin: 10,
-    color: '#7C45B8',
-  },
-  instructions: {
-    textAlign: 'center',
-    color: 'blue',
-    marginBottom: 5,
-  },
-  image:{
-    width: 100,
-    height: 100,
-  }
-});
 
 
 class QuestionDetail extends React.Component {
@@ -41,18 +22,28 @@ class QuestionDetail extends React.Component {
     return answersAsArray(this.props.answers).map( answer =>
          <Image
         key = {answer.id}
-        style={styles.image}
+        style={Styles.answerDetail.image}
         source={{ uri: answer.image_url}}/>
     );
   }
 
+  renderAnswerDetails() {
+    const allAnswers = answersAsArray(this.props.answers);
+    if(allAnswers.length !== 0 )  {
+      return (allAnswers.map((answer) => <AnswerDetail key={answer.id}
+                                               answer={answer}
+                                               deleteAnswer={this.props.deleteAnswer} />));
+    } else {
+      return <Text>"Nothing here"</Text>;
+    }
+  }
+
   render() {
-    console.log(this.props);
-    return <ScrollView contentContainerStyle={styles.container}>
-      <Text style={styles.instructions}>
+    return <ScrollView contentContainerStyle={Styles.questionDetail.container}>
+      <Text style={Styles.questionDetail.heading}>
         {this.props.title}
       </Text>
-      {this.renderImages()}
+      {this.renderAnswerDetails()}
     </ScrollView>;
   }
 
