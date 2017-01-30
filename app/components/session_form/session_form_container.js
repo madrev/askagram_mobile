@@ -4,10 +4,11 @@ import { login, clearErrors } from "../../actions/session_actions";
 
 
 
-const mapStateToProps = ({ session }) => ({
+const mapStateToProps = ({ session }, ownProps) => ({
   loggedIn: Boolean(session.currentUser),
   errors: session.errors,
-  currentUser: session.currentUser
+  currentUser: session.currentUser,
+  navigator: ownProps.navigator
 });
 
 const mapDispatchToProps = (dispatch) => ({

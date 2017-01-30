@@ -31,7 +31,11 @@ class SessionForm extends React.Component {
   handleSubmit() {
     // e.preventDefault();
     const user = Object.assign({}, this.state);
-    this.props.processForm({ user });
+    this.props.processForm({ user }).then( () => this.redirect());
+  }
+
+  redirect() {
+    this.props.navigator.push({title: "Question Detail", index: 1});
   }
 
   // handleDemoButton(e) {
@@ -69,10 +73,10 @@ class SessionForm extends React.Component {
       <Text>Log in</Text>
       {this.props.errors && this.errorList() }
       <TextInput type="text"
-             placeholder="Username"
-             style={Styles.sessionForm.textInput}
-             onChangeText={this.handleChange("username")}
-             value= {this.state.username}></TextInput>
+       placeholder="Username"
+       style={Styles.sessionForm.textInput}
+       onChangeText={this.handleChange("username")}
+       value= {this.state.username}></TextInput>
       <TextInput type="password"
        placeholder="Password"
        style={Styles.sessionForm.textInput}
