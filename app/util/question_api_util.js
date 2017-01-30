@@ -1,11 +1,10 @@
 export const fetchQuestions = () => (
-  $.ajax( {
-    method: "GET",
-    url: "api/questions"
-  })
+  fetch(`http://localhost:3000/api/questions`).then(
+    res => (res.json())
+  )
 );
 
-export const fetchQuestionDetail = (id) => (
+export const fetchQuestionDetail = id => (
   fetch(`http://localhost:3000/api/questions/${id}`).then(
     res => (res.json())
   )

@@ -25,3 +25,20 @@ export const answerDetail = StyleSheet.create({
     height: 300,
   }
 });
+
+export const sessionForm = StyleSheet.create({
+  container: {
+  flex: 1,
+  justifyContent: 'center',
+  alignItems: 'center',
+  paddingHorizontal: 20,
+  paddingTop: 20,
+},
+textInput: {
+  borderRadius: 5,
+  borderWidth: 1,
+  height: 44,
+  paddingHorizontal: 10,
+}
+
+});
