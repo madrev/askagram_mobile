@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import QuestionIndex from './question_index';
-import  { fetchQuestions, clearErrors } from '../../actions/question_actions';
+import  { fetchQuestions, clearErrors, fetchQuestionDetail } from '../../actions/question_actions';
 import { answeredQuestions, unansweredQuestions } from '../../reducers/selectors';
 
 
@@ -13,6 +13,7 @@ const mapStateToProps = ({ questions }, ownProps) => ({
 
 const mapDispatchToProps = dispatch => ({
   fetchQuestions: () => dispatch(fetchQuestions()),
+  fetchQuestionDetail: (id) => dispatch(fetchQuestionDetail(id)),
   clearErrors: () => dispatch(clearErrors())
 });
 

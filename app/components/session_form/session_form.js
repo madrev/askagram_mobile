@@ -16,7 +16,7 @@ class SessionForm extends React.Component {
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
-    // this.handleDemoButton = this.handleDemoButton.bind(this);
+    this.handleDemoButton = this.handleDemoButton.bind(this);
   }
 
   //
@@ -29,7 +29,6 @@ class SessionForm extends React.Component {
   // }
 
   handleSubmit() {
-    // e.preventDefault();
     const user = Object.assign({}, this.state);
     this.props.processForm({ user }).then( () => this.redirect());
   }
@@ -38,10 +37,9 @@ class SessionForm extends React.Component {
     this.props.navigator.push({title: "Question Index", index: 1});
   }
 
-  // handleDemoButton(e) {
-  //   e.preventDefault();
-  //   this.props.demoLogin().then( () => this.redirect() );
-  // }
+  handleDemoButton() {
+    this.props.demoLogin().then( () => this.redirect() );
+  }
 
   handleChange(field) {
     return (text) => {
@@ -85,6 +83,9 @@ class SessionForm extends React.Component {
                  value= {this.state.password}/>
      <TouchableHighlight onPress={this.handleSubmit}>
         <Text>Submit</Text>
+      </TouchableHighlight>
+     <TouchableHighlight onPress={this.handleDemoButton}>
+        <Text>Demo Login</Text>
       </TouchableHighlight>
     </View>;
   }

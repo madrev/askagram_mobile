@@ -20,10 +20,10 @@ class App extends React.Component {
               return <SessionFormContainer navigator={navigator}/>;
             case "Question Index":
             console.log("rendering index!");
-              return <QuestionIndexContainer/>;
+              return <QuestionIndexContainer navigator={navigator}/>;
             case "Question Detail":
             console.log("rendering detail!");
-              return <QuestionDetailContainer/>;
+              return <QuestionDetailContainer navigator={navigator}/>;
             default:
               return <Text>Routing error</Text>;
            }

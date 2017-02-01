@@ -1,5 +1,17 @@
 import { StyleSheet } from 'react-native';
 
+export const questionIndex = StyleSheet.create({
+  container: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#F5FCFF',
+    padding: 10
+  },
+  touchableHighlight: {
+    padding: 5,
+  }
+});
+
 export const questionDetail = StyleSheet.create({
   container: {
     justifyContent: 'center',

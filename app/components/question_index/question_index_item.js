@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text } from 'react-native';
+import { Text, TouchableHighlight } from 'react-native';
 
 class QuestionIndexItem extends React.Component {
    constructor(props){
@@ -7,7 +7,9 @@ class QuestionIndexItem extends React.Component {
    }
 
    render(){
-    return <Text>{this.props.question.title}</Text>;
+    return <TouchableHighlight onPress={this.props.navigateToQuestion}>
+      <Text>{this.props.question.title}</Text>
+    </TouchableHighlight>;
    }
 
 

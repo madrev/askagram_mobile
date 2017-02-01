@@ -14,9 +14,6 @@ class QuestionDetail extends React.Component {
     super(props);
   }
 
-  componentDidMount() {
-    this.props.fetchQuestionDetail(2);
-  }
 
   renderImages(){
     return answersAsArray(this.props.answers).map( answer =>
