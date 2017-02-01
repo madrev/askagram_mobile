@@ -10,7 +10,7 @@ const sessionReducer = (state = _defaultState, action) => {
   Object.freeze(state);
   switch(action.type) {
     case RECEIVE_CURRENT_USER:
-    // TODO: remove the conditional after error handling is fixed
+    // TODO: remove the conditional after error handling is implemented
       if (action.currentUser.username) {
         return merge( {}, _defaultState, { currentUser: action.currentUser} );
       } else {
