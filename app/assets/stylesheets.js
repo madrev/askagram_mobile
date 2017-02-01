@@ -1,5 +1,18 @@
 import { StyleSheet } from 'react-native';
 
+const COLORS = {
+  purple: "#3E245B",
+  green: "#7A9983",
+  darkGreen: "#607867"
+ };
+
+export const global = StyleSheet.create({
+  button: {
+    height: 25,
+    backgroundColor: COLORS.green
+  }
+});
+
 export const questionIndex = StyleSheet.create({
   container: {
     justifyContent: 'center',

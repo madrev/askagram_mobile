@@ -5,8 +5,7 @@ import QuestionIndexContainer from "./question_index/question_index_container";
 import SessionFormContainer from "./session_form/session_form_container";
 
 const routes = [
-  { title:"Session Form", index: 0 }
-  // { title:"Question Detail", index: 1},
+  { title:"Session Form" }
 ];
 
 class App extends React.Component {
@@ -19,10 +18,8 @@ class App extends React.Component {
             case "Session Form":
               return <SessionFormContainer navigator={navigator}/>;
             case "Question Index":
-            console.log("rendering index!");
               return <QuestionIndexContainer navigator={navigator}/>;
             case "Question Detail":
-            console.log("rendering detail!");
               return <QuestionDetailContainer navigator={navigator}/>;
             default:
               return <Text>Routing error</Text>;

@@ -81,10 +81,12 @@ class SessionForm extends React.Component {
                  secureTextEntry={true}
                  onChangeText={this.handleChange("password")}
                  value= {this.state.password}/>
-     <TouchableHighlight onPress={this.handleSubmit}>
+     <TouchableHighlight onPress={this.handleSubmit}
+                         style={Styles.global.button}>
         <Text>Submit</Text>
       </TouchableHighlight>
-     <TouchableHighlight onPress={this.handleDemoButton}>
+     <TouchableHighlight onPress={this.handleDemoButton}
+                         style={Styles.global.button}>
         <Text>Demo Login</Text>
       </TouchableHighlight>
     </View>;
