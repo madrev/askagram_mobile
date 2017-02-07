@@ -72,23 +72,25 @@ class SessionForm extends React.Component {
       {this.props.errors && this.errorList() }
       <TextInput type="text"
                  placeholder="Username"
-                 style={Styles.sessionForm.textInput}
+                 style={Styles.global.textInput}
                  onChangeText={this.handleChange("username")}
                  value= {this.state.username}/>
       <TextInput type="password"
                  placeholder="Password"
-                 style={Styles.sessionForm.textInput}
+                 style={Styles.global.textInput}
                  secureTextEntry={true}
                  onChangeText={this.handleChange("password")}
                  value= {this.state.password}/>
-     <TouchableHighlight onPress={this.handleSubmit}
-                         style={Styles.global.button}>
-        <Text>Submit</Text>
-      </TouchableHighlight>
-     <TouchableHighlight onPress={this.handleDemoButton}
-                         style={Styles.global.button}>
-        <Text>Demo Login</Text>
-      </TouchableHighlight>
+     <View style={Styles.global.flexRow}>
+        <TouchableHighlight onPress={this.handleSubmit}
+                           style={Styles.global.button}>
+          <Text>Submit</Text>
+        </TouchableHighlight>
+       <TouchableHighlight onPress={this.handleDemoButton}
+                           style={Styles.global.button}>
+          <Text>Demo Login</Text>
+        </TouchableHighlight>
+    </View>
     </View>;
   }
 

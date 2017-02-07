@@ -36,12 +36,14 @@ class QuestionDetail extends React.Component {
   }
 
   render() {
-    return <ScrollView contentContainerStyle={Styles.questionDetail.container}>
+    return <View style={Styles.global.scrollContainer}>
+    <ScrollView contentContainerStyle={Styles.questionDetail.container}>
       <Text style={Styles.questionDetail.heading}>
         {this.props.title}
       </Text>
       {this.renderAnswerDetails()}
-    </ScrollView>;
+    </ScrollView>
+  </View>;
   }
 
   // componentWillUnmount() {

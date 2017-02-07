@@ -1,7 +1,7 @@
 import React from 'react';
 import Icon from 'react-native-fontawesome';
 import { View, Text, TouchableHighlight } from 'react-native';
-
+import * as Styles from '../../assets/stylesheets';
 class LikeDisplay extends React.Component {
   constructor(props){
     super(props);
@@ -40,7 +40,7 @@ class LikeDisplay extends React.Component {
 
   render() {
     let buttonText = (this.likedByCurrentUser() ? "Unlike" : "Like");
-    return <View>
+    return <View style={Styles.global.flexRow}>
       <TouchableHighlight onPress={this.toggleLike}>
         <Text>"Heart Here"</Text>
       </TouchableHighlight>
