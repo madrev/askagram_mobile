@@ -3,6 +3,7 @@ import React from 'react';
 // import { likersAsArray } from "../../reducers/selectors";
 import * as Styles from '../../assets/stylesheets';
 import { View, Text, Image } from 'react-native';
+import LikeDisplayContainer from '../like_display/like_display_container';
 
 class AnswerDetail extends React.Component {
   constructor(props) {
@@ -29,6 +30,7 @@ class AnswerDetail extends React.Component {
         <Text>{this.answer.time_ago} ago</Text>
         <Image style={Styles.answerDetail.image}
                source={{ uri: this.answer.image_url}}/>
+        <LikeDisplayContainer answerId={this.answer.id}/>
       </View>;
   }
 

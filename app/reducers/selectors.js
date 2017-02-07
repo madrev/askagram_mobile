@@ -7,10 +7,11 @@ export const answersAsArray = answers => (
   answers[id] )
 );
 
-export const questionsAsArray = questions => (
-   Object.keys(questions.questions || {} ).map( id =>
-  questions.questions[id] )
-);
+export const questionsAsArray = questions => {
+  console.log(questions);
+   return Object.keys(questions.questions || {} ).map( id =>
+  questions.questions[id] );
+};
 
 export const answeredQuestions = questions => {
   return questions.sortOrder.map( id => questions.questions[id]);

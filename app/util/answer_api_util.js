@@ -23,12 +23,14 @@
 //   })
 // );
 
-// export const fetchAnswer = id => (
-//   $.ajax({
-//     method: "GET",
-//     url: `api/answers/${id}`
-//   })
-// );
+
+
+export const fetchAnswer = id => (
+  fetch(`http://localhost:3000/api/answers/${id}`).then(
+    res => (res.json())
+  )
+);
+
 //
 // export const deleteAnswer = id => (
 //   $.ajax({
