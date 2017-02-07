@@ -26,7 +26,6 @@ class QuestionIndex extends React.Component {
   render() {
 
     return <View style={Styles.questionIndex.container}>
-        <UnansweredIndex questions={this.props.unansweredQuestions}/>
         { this.props.answeredQuestions.map((question, idx) =>
           <QuestionIndexItem key={idx}
                              question={question}

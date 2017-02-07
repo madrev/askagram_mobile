@@ -1,5 +1,6 @@
 import React from 'react';
 import { Text, TouchableHighlight } from 'react-native';
+import * as Styles from '../../assets/stylesheets';
 
 class QuestionIndexItem extends React.Component {
    constructor(props){
@@ -7,7 +8,8 @@ class QuestionIndexItem extends React.Component {
    }
 
    render(){
-    return <TouchableHighlight onPress={this.props.navigateToQuestion}>
+    return <TouchableHighlight style={Styles.questionIndex.questionButton}
+                               onPress={this.props.navigateToQuestion}>
       <Text>{this.props.question.title}</Text>
     </TouchableHighlight>;
    }

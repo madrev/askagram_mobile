@@ -59,6 +59,17 @@ export const questionIndex = StyleSheet.create({
   },
   touchableHighlight: {
     padding: 5,
+  },
+  questionButton: {
+    justifyContent:'flex-start',
+    backgroundColor: COLORS.lightGrey,
+    padding: 10,
+    marginVertical: 3,
+    alignSelf: 'stretch',
+    borderRadius: 5
+  },
+  unansweredIndex: {
+    backgroundColor: COLORS.lightGrey,
   }
 });
 
@@ -84,7 +95,8 @@ export const answerDetail = StyleSheet.create({
   image:{
     width: 300,
     height: 300,
-  }
+  },
+
 });
 
 export const sessionForm = StyleSheet.create({
