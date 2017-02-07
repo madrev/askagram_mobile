@@ -5,7 +5,6 @@ import { View, Text, TouchableHighlight } from 'react-native';
 class LikeDisplay extends React.Component {
   constructor(props){
     super(props);
-    console.log(this.props);
     this.answerId = this.props.answerId;
     this.toggleLike = this.toggleLike.bind(this);
   }
